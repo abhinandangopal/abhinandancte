@@ -26,7 +26,8 @@ const stringToColor = (str: string) => {
     return '#' + '00000'.substring(0, 6 - c.length) + c;
 };
 
-const API_URL = 'http://localhost:8081/api';
+const API_URL = 'https://collabedit-backend-production.up.railway.app/api';
+
 
 function App() {
   const params = new URLSearchParams(window.location.search);
@@ -180,6 +181,8 @@ function App() {
 
   return (
     <div style={{ padding: '2rem', fontFamily: 'Arial', backgroundColor: bgMain, color: textMain, height: '100vh', display: 'flex', flexDirection: 'column', transition: 'background-color 0.3s' }}>
+
+    <h1 style={{backgroundColor: 'yellow', color: 'red', textAlign: 'center', padding: '10px', margin: '0 0 20px 0'}}>This is a test that local host is taking the changes here</h1>
       <ToastContainer />
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
         <div>
