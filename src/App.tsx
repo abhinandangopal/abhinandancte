@@ -90,8 +90,10 @@ function App() {
 
   // WEBSOCKET
   const USER_ID = email; 
-  const USER_COLOR = stringToColor(USER_ID);
-  const WS_URL = (view === 'editor' && docId && activeTab) ? `ws://localhost:8081?docId=${docId}&tabId=${activeTab}&userId=${USER_ID}` : null;
+  const USER_COLOR = stringToColor(USER_ID); 
+  const WS_URL = (view === 'editor' && docId && activeTab) 
+  ? `wss://collabedit-backend-production.up.railway.app?docId=${docId}&tabId=${activeTab}&userId=${USER_ID}` 
+  : null;
 
   const { sendMessage } = useWebSocket(WS_URL, {
     onOpen: () => console.log(`Connected`),
